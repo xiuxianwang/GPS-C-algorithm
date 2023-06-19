@@ -36,11 +36,8 @@ for i=1:51   % the grid for the branin problem
         A(count,2) = 0+0.3*(j-1);
     end
 end
+
 %% The main steps of the GPS-C algorithm
-% generate matrix to store results
-A_Opti_Record = cell(30,1);
-A_theta = cell(30,1);
-for i_i = 1:30
 s_rand = RandStream('mt19937ar','Seed',1);
 RandStream.setGlobalStream(s_rand);
 
@@ -130,8 +127,4 @@ Opti_Record(step) = g_star;  % record the objective value of current best soluti
 fprintf('%d  [%.3f, %.3f] %f \n',step,x_star(1),x_star(2),g_star); % output the current best solution
 
 end
-ss1 = num2cell(Opti_Record',2);
-    ss2 = num2cell(theta',2);
-    A_Opti_Record(i_i,1) = ss1;
-    A_theta(i_i,1) = ss2;
-end
+
