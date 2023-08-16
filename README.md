@@ -16,7 +16,7 @@ for the GPS-C algorithm.
 For the codes of the GPS-C algorithm, CGPS.m is the main file. Files Fun_xxx.m are the functions of test problems with simulation noises. Files Fun_xxx_free are the functions of test problems 
 without simulation noises, which are used to evaluate the quality of obtained solutions.
 
-Files SKfit.m and SKfit2.m are used to estimate the Gaussian process parameters required by the GPS-C algorithm. File Skpredict.m is used to predict the conditional mean values of each sampled 
+Files SKfit.m and SKfit2.m are used to estimate the Gaussian process parameters required by the GPS-C algorithm. File Skpredict.m is used to predict the conditional mean value of each sampled 
 solution. File CalculateMSE.m is used to calculate the conditional variance of each sampled solution. This file is used in the sampling component. All these codes are revised based on the codes of 
 stochstic kriging of Ankenman et. al. (2010). Files LogPL.m, corrcubR.m and correxpR.m are the functions required by Files SKfit.m and SKpredict.m.
 
@@ -25,6 +25,6 @@ directly. File Matrix_inverse_1.m uses block matrix inversion to reduce computat
 
 Files SKpredict_fmincon.m and find_current_best.m are used to find the current optimal solution of the contructed Gaussian-surrogate model. File SKpredict_fmincon.m is used in two-dimensional problems, where 
 it is possible to construct and evaluate a dense grid, to find current best solutions around the grid-best solution. File find_current_best.m is used in high-dimensional problems to search good solutions 
-in the whole feasible region. In both files, the Matlab optimizer _fmincon()_ is used.
+in the whole feasible region. In both files, the Matlab optimizer _fmincon()_ is used for its efficiency.
 
 File Sampling.m is used to sample solutions in each iteration. The Markov Chain Coordinate Sampling (MCCS) scheme is adopted in this paper.
