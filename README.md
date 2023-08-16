@@ -21,6 +21,10 @@ solution. File CalculateMSE.m is used to calculate the conditional variance of e
 stochstic kriging of Ankenman et. al. (2010). Files LogPL.m, corrcubR.m and correxpR.m are the functions required by Files SKfit.m and SKpredict.m.
 
 Files Matrix_inverse.m and Matrix_inverse_1.m are used to calculate and record the inverse of the covariance matrix of each iteration. File Matrix_inverse.m use the inverse function of Matlab _inv()_ 
-directly. File Matrix_inverse_1.m (to be updated)
+directly. File Matrix_inverse_1.m uses block matrix inversion to reduce computational complexity.
 
-File SKpredict_fmincon.m is used to find the optimal solution of the contructed Gaussian-surrogate model aound the best point of a dense grid.  (to be updated)
+Files SKpredict_fmincon.m and find_current_best.m are used to find the current optimal solution of the contructed Gaussian-surrogate model. File SKpredict_fmincon.m is used in two-dimensional problems, where 
+it is possible to construct and evaluate a dense grid, to find current best solutions around the grid-best solution. File find_current_best.m is used in high-dimensional problems to search good solutions 
+in the whole feasible region. In both files, the Matlab optimizer _fmincon()_ is used.
+
+File Sampling.m is used to sample solutions in each iteration. The Markov Chain Coordinate Sampling (MCCS) scheme is adopted in this paper.
