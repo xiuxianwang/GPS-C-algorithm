@@ -11,3 +11,9 @@ problems (randomly generated from Gaussian process) and the Weighted-Sphere prob
 
 Directory "Other algorithms" contains all the codes of the SKO algorithm, the KGCP algorithm, the ASR algorithm and the SOSA algorithm that are used in Section 6.2 to provide benchmarks 
 for the GPS-C algorithm.
+
+
+For the codes of the GPS-C algorithm, CGPS.m is the main file. Files Fun_xxx.m are the functions of test problems with simulation noises. Files Fun_xxx_free are the functions of test problems 
+without simulation noises, which are used to evaluate the quality of obtained solutions.
+
+Files SKfit.m and SKfit_2.m are used to estimate the Gaussian process parameters required by the GPS-C algorithm. SKfit_2.m is used in 
