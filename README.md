@@ -16,4 +16,11 @@ for the GPS-C algorithm.
 For the codes of the GPS-C algorithm, CGPS.m is the main file. Files Fun_xxx.m are the functions of test problems with simulation noises. Files Fun_xxx_free are the functions of test problems 
 without simulation noises, which are used to evaluate the quality of obtained solutions.
 
-Files SKfit.m and SKfit_2.m are used to estimate the Gaussian process parameters required by the GPS-C algorithm. SKfit_2.m is used in 
+Files SKfit.m and SKfit2.m are used to estimate the Gaussian process parameters required by the GPS-C algorithm. File Skpredict.m is used to predict the conditional mean values of each sampled 
+solution. File CalculateMSE.m is used to calculate the conditional variance of each sampled solution. This file is used in the sampling component. All these codes are revised based on the codes of 
+stochstic kriging of Ankenman et. al. (2010). Files LogPL.m, corrcubR.m and correxpR.m are the functions required by Files SKfit.m and SKpredict.m.
+
+Files Matrix_inverse.m and Matrix_inverse_1.m are used to calculate and record the inverse of the covariance matrix of each iteration. File Matrix_inverse.m use the inverse function of Matlab _inv()_ 
+directly. File Matrix_inverse_1.m (to be updated)
+
+File SKpredict_fmincon.m is used to find the optimal solution of the contructed Gaussian-surrogate model aound the best point of a dense grid.  (to be updated)
